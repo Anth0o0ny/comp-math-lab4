@@ -7,8 +7,6 @@ import java.util.stream.IntStream;
 
 public abstract class
 Approximation {
-
-//    public static final int N = 8;
     protected final double[] x;
     protected final double[] y;
 

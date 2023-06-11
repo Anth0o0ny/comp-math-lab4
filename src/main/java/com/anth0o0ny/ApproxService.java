@@ -14,13 +14,13 @@ public class ApproxService {
     private final List<Approximation>  approximations = new ArrayList<>();
 
     public ApproxService(PointsModel points) {
-        CubicApproximation cubeAppro = new CubicApproximation(points);
+
         ExponentialApproximation expoAppro = new ExponentialApproximation(points);
         LinearApproximation lineAppro = new LinearApproximation(points);
         LogarithmicApproximation logAppro = new LogarithmicApproximation(points);
         PowerApproximation powAppro = new PowerApproximation(points);
         SquareApproximation squareAppro = new SquareApproximation(points);
-
+        CubicApproximation cubeAppro = new CubicApproximation(points);
 
         double[] x = points.getX();
         double[] y = points.getY();
@@ -38,22 +38,25 @@ public class ApproxService {
         }
 
         if (hasNegX) {
-            approximations.add(cubeAppro);
+
             approximations.add(expoAppro);
             approximations.add(lineAppro);
             approximations.add(squareAppro);
-        } else if (hasNegY) {
             approximations.add(cubeAppro);
+        } else if (hasNegY) {
+
             approximations.add(lineAppro);
             approximations.add(logAppro);
             approximations.add(squareAppro);
-        } else {
             approximations.add(cubeAppro);
+        } else {
+
             approximations.add(expoAppro);
             approximations.add(lineAppro);
             approximations.add(logAppro);
             approximations.add(powAppro);
             approximations.add(squareAppro);
+            approximations.add(cubeAppro);
         }
     }
 

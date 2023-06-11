@@ -79,9 +79,6 @@ rowCountSelect.addEventListener('change', function() {
 
 
 function redrawGraphic() {
-    // const xFields = $('.x-val');
-    //
-    // const yFields = $('.y-val');
     const xFields = Array.from(document.getElementsByClassName('x-val'));
     const yFields = Array.from(document.getElementsByClassName('y-val'));
 
@@ -308,7 +305,7 @@ $(document).ready(function () {
                 console.log("chart" + chart);
                 // Добавление точек на график
                 chart.data.datasets.push(data);
-                chart.data.labels.push.apply(chart.data.labels, x);
+                // chart.data.labels.push.apply(chart.data.labels, x);
                 chart.update();
 
                 let text = `name: ${name}\n` +
